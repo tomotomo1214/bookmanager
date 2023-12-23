@@ -1,6 +1,14 @@
 from django import forms
-class PostForm(forms.Form):
-    title=forms.CharField(max_length=50,widget=forms.Textarea(attrs={'class':'form-control'}))
-    where=forms.CharField(max_length=50,widget=forms.Textarea(attrs={'class':'form-control'}))
-    detail=forms.CharField(max_length=150)
-    
+from .models import Book,Bookshelf
+class PostForm(forms.ModelForm):
+    class Meta:
+        model=Book
+        fields=[
+            'title',
+            'detail',
+            'bookshelf'
+        ]
+        model=Bookshelf
+        fields=[
+            'place'
+        ]

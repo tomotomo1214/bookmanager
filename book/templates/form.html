@@ -8,8 +8,8 @@
         <p>{{msg}}</p>
         <form action="{%url 'new_book'%}"method="POST">
             {% csrf_token %}
-            <input id="title"name="title" type="text">
-            <input type="submit" value="click">
+            {{form}}
+            <input type="submit" value="登録">
         </form>
     </body>
 </html>
